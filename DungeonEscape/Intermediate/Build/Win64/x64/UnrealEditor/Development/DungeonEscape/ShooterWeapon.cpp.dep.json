@@ -1,0 +1,22 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\projekty unreal\\dungeonescape\\dungeonescape\\dungeonescape\\source\\dungeonescape\\variant_shooter\\weapons\\shooterweapon.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\projekty unreal\\dungeonescape\\dungeonescape\\dungeonescape\\intermediate\\build\\win64\\x64\\dungeonescapeeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "e:\\projekty unreal\\dungeonescape\\dungeonescape\\dungeonescape\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\dungeonescape\\definitions.dungeonescape.h",
+            "e:\\projekty unreal\\dungeonescape\\dungeonescape\\dungeonescape\\source\\dungeonescape\\variant_shooter\\weapons\\shooterweapon.h",
+            "e:\\projekty unreal\\dungeonescape\\dungeonescape\\dungeonescape\\source\\dungeonescape\\variant_shooter\\weapons\\shooterweaponholder.h",
+            "e:\\projekty unreal\\dungeonescape\\dungeonescape\\dungeonescape\\intermediate\\build\\win64\\unrealeditor\\inc\\dungeonescape\\uht\\shooterweaponholder.generated.h",
+            "e:\\projekty unreal\\dungeonescape\\dungeonescape\\dungeonescape\\intermediate\\build\\win64\\unrealeditor\\inc\\dungeonescape\\uht\\shooterweapon.generated.h",
+            "e:\\unreal silnik\\ue_5.6\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\kismet\\kismetmathlibrary.h",
+            "e:\\unreal silnik\\ue_5.6\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\kismetmathlibrary.generated.h",
+            "e:\\unreal silnik\\ue_5.6\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\kismet\\kismetmathlibrary.inl",
+            "e:\\projekty unreal\\dungeonescape\\dungeonescape\\dungeonescape\\source\\dungeonescape\\variant_shooter\\weapons\\shooterprojectile.h",
+            "e:\\projekty unreal\\dungeonescape\\dungeonescape\\dungeonescape\\intermediate\\build\\win64\\unrealeditor\\inc\\dungeonescape\\uht\\shooterprojectile.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

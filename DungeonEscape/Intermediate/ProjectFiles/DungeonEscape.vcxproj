@@ -252,6 +252,8 @@
     <None Include="..\..\DungeonEscape.uproject"/>
     <None Include="..\..\Source\DungeonEscape.Target.cs"/>
     <None Include="..\..\Source\DungeonEscapeEditor.Target.cs"/>
+    <None Include="..\..\.vsconfig"/>
+    <None Include="..\..\UpgradeLog.htm"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>
@@ -278,6 +280,10 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\DungeonEscape\DungeonEscapePlayerController.h"/>
+    <ClCompile Include="..\..\Source\DungeonEscape\MoverComponent.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DungeonEscape\MoverComponent.h"/>
     <ClCompile Include="..\..\Source\DungeonEscape\Variant_Horror\HorrorCharacter.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>

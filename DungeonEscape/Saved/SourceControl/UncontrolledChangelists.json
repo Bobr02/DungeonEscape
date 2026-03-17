@@ -5,7 +5,8 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"E:/Projekty Unreal/DungeonEscape/DungeonEscape/DungeonEscape/Content/MyContent/TestLevel.umap"
+				"E:/Projekty Unreal/DungeonEscape/DungeonEscape/DungeonEscape/Content/MyContent/TestLevel.umap",
+				"E:/Projekty Unreal/DungeonEscape/DungeonEscape/DungeonEscape/Content/MyContent/BP_Player.uasset"
 			]
 		}
 	]

@@ -73,11 +73,17 @@ struct Z_Construct_UClass_UMoverComponent_Statics
 		{ "Category", "MoverComponent" },
 		{ "ModuleRelativePath", "MoverComponent.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bBackwardMove_MetaData[] = {
+		{ "Category", "MoverComponent" },
+		{ "ModuleRelativePath", "MoverComponent.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStructPropertyParams NewProp_MoveOffset;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_MovementTime;
 	static void NewProp_bShouldMove_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bShouldMove;
+	static void NewProp_bBackwardMove_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bBackwardMove;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -92,10 +98,16 @@ void Z_Construct_UClass_UMoverComponent_Statics::NewProp_bShouldMove_SetBit(void
 	((UMoverComponent*)Obj)->bShouldMove = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UMoverComponent_Statics::NewProp_bShouldMove = { "bShouldMove", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UMoverComponent), &Z_Construct_UClass_UMoverComponent_Statics::NewProp_bShouldMove_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bShouldMove_MetaData), NewProp_bShouldMove_MetaData) };
+void Z_Construct_UClass_UMoverComponent_Statics::NewProp_bBackwardMove_SetBit(void* Obj)
+{
+	((UMoverComponent*)Obj)->bBackwardMove = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UMoverComponent_Statics::NewProp_bBackwardMove = { "bBackwardMove", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UMoverComponent), &Z_Construct_UClass_UMoverComponent_Statics::NewProp_bBackwardMove_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bBackwardMove_MetaData), NewProp_bBackwardMove_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UMoverComponent_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMoverComponent_Statics::NewProp_MoveOffset,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMoverComponent_Statics::NewProp_MovementTime,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMoverComponent_Statics::NewProp_bShouldMove,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMoverComponent_Statics::NewProp_bBackwardMove,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UMoverComponent_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_UMoverComponent_Statics::DependentSingletons[])() = {
@@ -134,10 +146,10 @@ UMoverComponent::~UMoverComponent() {}
 struct Z_CompiledInDeferFile_FID_Projekty_Unreal_DungeonEscape_DungeonEscape_DungeonEscape_Source_DungeonEscape_MoverComponent_h__Script_DungeonEscape_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UMoverComponent, UMoverComponent::StaticClass, TEXT("UMoverComponent"), &Z_Registration_Info_UClass_UMoverComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMoverComponent), 4179733921U) },
+		{ Z_Construct_UClass_UMoverComponent, UMoverComponent::StaticClass, TEXT("UMoverComponent"), &Z_Registration_Info_UClass_UMoverComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMoverComponent), 1395500284U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projekty_Unreal_DungeonEscape_DungeonEscape_DungeonEscape_Source_DungeonEscape_MoverComponent_h__Script_DungeonEscape_3204838371(TEXT("/Script/DungeonEscape"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projekty_Unreal_DungeonEscape_DungeonEscape_DungeonEscape_Source_DungeonEscape_MoverComponent_h__Script_DungeonEscape_1511464070(TEXT("/Script/DungeonEscape"),
 	Z_CompiledInDeferFile_FID_Projekty_Unreal_DungeonEscape_DungeonEscape_DungeonEscape_Source_DungeonEscape_MoverComponent_h__Script_DungeonEscape_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projekty_Unreal_DungeonEscape_DungeonEscape_DungeonEscape_Source_DungeonEscape_MoverComponent_h__Script_DungeonEscape_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

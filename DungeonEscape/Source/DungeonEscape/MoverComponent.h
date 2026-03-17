@@ -25,6 +25,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool bShouldMove = false;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bBackwardMove = false;
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
@@ -36,5 +39,5 @@ public:
 private:
 	FVector StartLocation;
 	FVector TargetLocation;
-
+	//bool bBackwardMove;
 };

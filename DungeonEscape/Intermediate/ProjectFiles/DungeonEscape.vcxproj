@@ -259,6 +259,10 @@
     <None Include="..\..\Config\DefaultEngine.ini"/>
     <None Include="..\..\Config\DefaultGame.ini"/>
     <None Include="..\..\Config\DefaultInput.ini"/>
+    <ClCompile Include="..\..\Source\DungeonEscape\CollectableItem.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DungeonEscape\CollectableItem.h"/>
     <None Include="..\..\Source\DungeonEscape\DungeonEscape.Build.cs"/>
     <ClCompile Include="..\..\Source\DungeonEscape\DungeonEscape.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -280,6 +284,10 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\DungeonEscape\DungeonEscapePlayerController.h"/>
+    <ClCompile Include="..\..\Source\DungeonEscape\LockActor.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DungeonEscape\LockActor.h"/>
     <ClCompile Include="..\..\Source\DungeonEscape\MoverComponent.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>

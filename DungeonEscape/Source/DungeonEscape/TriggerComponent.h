@@ -21,7 +21,16 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	AActor* MoverActor;
 
-	UMoverComponent* Mover;
+	UPROPERTY(VisibleAnywhere)
+	bool IsTriggered = false;
+
+	UPROPERTY(EditAnywhere)
+	bool IsPressurePlate = false;
+
+	UPROPERTY(VisibleAnywhere)
+	int32 ActivatorCount = 0;
+
+	void Trigger(bool NewTriggerValue);
 
 protected:
 	// Called when the game starts
@@ -30,4 +39,14 @@ protected:
 public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
+	UFUNCTION()
+	void OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void OnOverlapEnd(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
+private:
+	UMoverComponent* MoverComponent;
+	
 };

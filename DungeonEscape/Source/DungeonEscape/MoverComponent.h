@@ -22,11 +22,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float MovementTime = 4.f;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	bool bShouldMove = false;
+	bool GetShouldMove();
+	void SetShouldMove(bool NewShouldMove);
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	bool bBackwardMove = false;
+	bool ReachedTarget = false;
 
 protected:
 	// Called when the game starts
@@ -39,5 +38,5 @@ public:
 private:
 	FVector StartLocation;
 	FVector TargetLocation;
-	//bool bBackwardMove;
+	bool bShouldMove = false;
 };

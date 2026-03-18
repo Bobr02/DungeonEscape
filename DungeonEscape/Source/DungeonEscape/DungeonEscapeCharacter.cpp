@@ -10,6 +10,10 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "DungeonEscape.h"
 
+#include "CollectableItem.h"
+#include "LockActor.h"
+
+
 ADungeonEscapeCharacter::ADungeonEscapeCharacter()
 {
 	// Set size for collision capsule
@@ -59,12 +63,83 @@ void ADungeonEscapeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 		// Looking/Aiming
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ADungeonEscapeCharacter::LookInput);
 		EnhancedInputComponent->BindAction(MouseLookAction, ETriggerEvent::Triggered, this, &ADungeonEscapeCharacter::LookInput);
+
+		EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Started, this, &ADungeonEscapeCharacter::Interact);
 	}
 	else
 	{
 		UE_LOG(LogDungeonEscape, Error, TEXT("'%s' Failed to find an Enhanced Input Component! This template is built to use the Enhanced Input system. If you intend to use the legacy system, then you will need to update this C++ file."), *GetNameSafe(this));
 	}
 }
+
+void ADungeonEscapeCharacter::Interact()
+{
+	FVector Start = FirstPersonCameraComponent->GetComponentLocation();
+	FVector End = Start + (FirstPersonCameraComponent->GetForwardVector() * MaxInteractionDistance);
+	DrawDebugLine(GetWorld(), Start, End, FColor::Red, false, 5.0f);
+
+	FCollisionShape InteractionSphere = FCollisionShape::MakeSphere(InteractionSphereRadius);
+	DrawDebugSphere(GetWorld(), End, InteractionSphereRadius, 20, FColor::Blue, false, 5.0f);
+
+	FHitResult HitResult;
+	bool HasHit = GetWorld()->SweepSingleByChannel(
+		HitResult,
+		Start, End,
+		FQuat::Identity,
+		ECC_GameTraceChannel2,
+		InteractionSphere
+	);
+
+	if (HasHit)
+	{
+		AActor* HitActor = HitResult.GetActor();
+
+		if (HitActor->ActorHasTag("CollectableItem"))
+		{
+			// HitActor is a collectable item
+			ACollectableItem* CollectableItem = Cast<ACollectableItem>(HitActor);
+			if (CollectableItem)
+			{
+				ItemList.Add(CollectableItem->ItemName);
+
+				CollectableItem->Destroy();
+			}
+
+		}
+		else if (HitActor->ActorHasTag("Lock"))
+		{
+			// HitActor is a lock actor
+			ALockActor* LockActor = Cast<ALockActor>(HitActor);
+			if (LockActor)
+			{
+				if (!LockActor->GetIsKeyPlaced())
+				{
+					// Lock is empty
+					int32 ItemsRemoved = ItemList.RemoveSingle(LockActor->KeyItemName);
+					if (ItemsRemoved)
+					{
+						LockActor->SetIsKeyPlaced(true);
+					}
+					else
+					{
+						UE_LOG(LogTemp, Display, TEXT("Key item not in inventory!"));
+					}
+				}
+				else
+				{
+					// Lock has a key inside!
+					ItemList.Add(LockActor->KeyItemName);
+					LockActor->SetIsKeyPlaced(false);
+				}
+			}
+		}
+	}
+	else
+	{
+		UE_LOG(LogTemp, Display, TEXT("No actor hit!"));
+	}
+}
+
 
 
 void ADungeonEscapeCharacter::MoveInput(const FInputActionValue& Value)

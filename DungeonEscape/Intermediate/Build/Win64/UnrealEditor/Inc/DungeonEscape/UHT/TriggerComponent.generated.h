@@ -16,7 +16,16 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
+class AActor;
+class UPrimitiveComponent;
+struct FHitResult;
+
 // ********** Begin Class UTriggerComponent ********************************************************
+#define FID_Projekty_Unreal_DungeonEscape_DungeonEscape_DungeonEscape_Source_DungeonEscape_TriggerComponent_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execOnOverlapEnd); \
+	DECLARE_FUNCTION(execOnOverlapBegin);
+
+
 DUNGEONESCAPE_API UClass* Z_Construct_UClass_UTriggerComponent_NoRegister();
 
 #define FID_Projekty_Unreal_DungeonEscape_DungeonEscape_DungeonEscape_Source_DungeonEscape_TriggerComponent_h_16_INCLASS_NO_PURE_DECLS \
@@ -44,6 +53,7 @@ public: \
 #define FID_Projekty_Unreal_DungeonEscape_DungeonEscape_DungeonEscape_Source_DungeonEscape_TriggerComponent_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
+	FID_Projekty_Unreal_DungeonEscape_DungeonEscape_DungeonEscape_Source_DungeonEscape_TriggerComponent_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_Projekty_Unreal_DungeonEscape_DungeonEscape_DungeonEscape_Source_DungeonEscape_TriggerComponent_h_16_INCLASS_NO_PURE_DECLS \
 	FID_Projekty_Unreal_DungeonEscape_DungeonEscape_DungeonEscape_Source_DungeonEscape_TriggerComponent_h_16_ENHANCED_CONSTRUCTORS \
 private: \
